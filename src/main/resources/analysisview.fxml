@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="691.0" style="-fx-background-color: #2980b9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="analysis.AnalysisController">
+    <bottom>
+        <Pane prefHeight="203.0" prefWidth="691.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button layoutX="574.0" layoutY="75.0" mnemonicParsing="false" onAction="#startAnalysis" prefHeight="45.0" prefWidth="90.0" style="-fx-background-color: #2ecc71;" text="Analiziraj">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="574.0" layoutY="135.0" mnemonicParsing="false" onAction="#goBack" prefHeight="45.0" prefWidth="90.0" style="-fx-background-color: #ecf0f1;" text="Nazad">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            <TextArea fx:id="contrastTF" editable="false" layoutX="232.0" layoutY="24.0" prefHeight="158.0" prefWidth="330.0" style="-fx-background-color: #ecf0f1;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <VBox layoutX="14.0" layoutY="3.0" prefHeight="186.0" prefWidth="218.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Ukupna sr vrijednost:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="overallMeanLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="SSA:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                        <Label fx:id="ssaLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="SSE:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                        <Label fx:id="sseLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="SST:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                        <Label fx:id="sstLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="20.0" prefWidth="314.0" spacing="10.0">
+                     <children>
+                        <Label text="Varijansa alternativa:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                        <Label fx:id="varianceALbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Varijansa grešaka:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="varianceELbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="F izracunato:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="FcalLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="F tabelarno::" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="FtabLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="resultLbl" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="232.0" text="Kontrasti:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+    </bottom>
+    <center>
+        <AnchorPane prefHeight="332.0" prefWidth="678.0" BorderPane.alignment="CENTER">
+            <children>
+                <ScrollPane layoutY="3.0" prefHeight="314.0" prefWidth="691.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-border-color: black;">
+                    <content>
+                        <GridPane fx:id="gridPane" hgap="5.0" style="-fx-border-color: transparent;" vgap="5.0">
+                            
+                        </GridPane>
+                    </content>
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                </ScrollPane>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="667.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Stepen vjerovatnoće:" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="probabilityTF">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label text="(0.0 - 1.0)" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets left="10.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+</BorderPane>
